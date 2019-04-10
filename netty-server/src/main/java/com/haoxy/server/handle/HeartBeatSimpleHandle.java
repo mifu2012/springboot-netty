@@ -52,8 +52,8 @@ public class HeartBeatSimpleHandle extends SimpleChannelInboundHandler<CustomPro
     protected void channelRead0(ChannelHandlerContext ctx, CustomProtocol customProtocol) throws Exception {
         LOGGER.info("收到customProtocol={}", customProtocol);
         //我们调用writeAndFlush（Object）来逐字写入接收到的消息并刷新线路
-        //ctx.writeAndFlush(customProtocol);
         //保存客户端与 Channel 之间的关系
         NettySocketHolder.put(customProtocol.getId(), (NioSocketChannel) ctx.channel());
+        ctx.writeAndFlush(customProtocol);
     }
 }

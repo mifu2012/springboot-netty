@@ -19,6 +19,7 @@
         <module>netty-common</module>
     </modules>
     <properties>
+        <java.version>1.8</java.version>
         <junit.version>4.11</junit.version>
         <netty.version>4.1.21.Final</netty.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
